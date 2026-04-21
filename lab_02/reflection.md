@@ -1,1 +1,98 @@
- 
+Lab 2 - Reflection
+
+Mohamed Ahmed abd-elakder
+
+
+
+Part 1: Redis Replication
+
+
+
+&#x20;What We Did
+
+\- Set up 1 Redis master and 2 Redis replicas using Docker Compose
+
+\- Wrote data to the master and read it from replicas
+
+\- Simulated master failure and tested replica behavior
+
+
+
+Results
+
+\- Writing to master: SET mykey "Hello from Master" OK
+
+\- Reading from replica-1: GET mykey  "Hello from Master" 
+
+\- Reading from replica-2: GET mykey "Hello from Master" 
+
+\- INFO replication showed: role:master, connected\_slaves:2
+
+
+
+Obser:
+
+\- Redis replication is no consistent 
+
+\- Replicas are read-only by default
+
+\- Manual change is needed to promote a replica to master
+
+
+
+
+
+
+
+Part 2: etcd Leader Election
+
+
+
+What We Did
+
+\- Set up a 3-node etcd cluster using Docker Compose
+
+\- Stored key-value pairs in the cluster
+
+\- Simulated leader failure and observed automatic re-election
+
+
+
+Results
+
+\- All 3 nodes were healthy: etcd1, etcd2, etcd3
+
+\- put course: Distributed Systems:ok 
+
+\- get course : Distributed Systems 
+
+\- Initial leader: etcd1
+
+\- After stopping etcd1: etcd3 became the new leader automatically 
+
+\- Data still accessible after leader failure 
+
+\- After restarting etcd1: cluster fully recovered 
+
+
+
+Obser:
+
+\- etcd uses Raft consensus algorithm
+
+\- Leader election happens automatically within seconds
+
+\- With 3 nodes, cluster needs 2 nodes for majority
+
+
+
+Conclusion
+
+Replication and consensus are fundamental building blocks of distributed
+
+systems. Redis provides simple master-replica replication suitable for
+
+caching, while etcd provides strong consistency through Raft consensus
+
+suitable for critical configuration data and service coordination.
+
