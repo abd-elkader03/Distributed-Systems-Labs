@@ -1,5 +1,4 @@
-# plot_histogram.py - Generate Latency Histogram PNG
-# Student: [Your Name]
+# Student: Mohamed Ahmed Abd-elkader SE3
 
 import matplotlib.pyplot as plt
 import numpy as np

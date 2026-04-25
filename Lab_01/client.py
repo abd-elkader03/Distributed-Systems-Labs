@@ -1,5 +1,4 @@
-# client.py - Latency Measurement Client
-# Student: [Your Name]
+# Student: Mohamed Ahmed Abd-elkader SE3
 
 import socket
 import time

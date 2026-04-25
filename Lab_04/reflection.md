@@ -1,6 +1,6 @@
 \# Lab 4 - Reflection Report
 
-\*\*Student Name:\*\* Mohamed Ahmed Abd-elkader SE3
+\# Student: Mohamed Ahmed Abd-elkader SE3
 
 
 
